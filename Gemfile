@@ -4,8 +4,8 @@ source "https://rubygems.org"
 
 git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
-# gem "rails"
+group :test do
+  gem "rspec", "~> 3.9"
+end
 
-gem "rspec", "~> 3.9"
-
-gem "activesupport", "~> 6.0"
+gem "activesupport", "~> 6.0", require: 'active_support'
