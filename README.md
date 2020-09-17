@@ -19,6 +19,8 @@ bundle install
 
 ## Running
 
+You can run this code using my [Repl.it](https://repl.it/join/edaixuzi-giubueno).
+
 ### The tests
 
 You can execute the tests by typing the following line.
