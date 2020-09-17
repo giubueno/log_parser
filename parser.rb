@@ -7,4 +7,7 @@ module Parser
 
     line.split(' ')[0]
   end
+
+  def self.create_counter
+  end
 end
