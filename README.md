@@ -1,6 +1,6 @@
 # Log Parser
 This program receives a log file and calculates the number
-of visits each path has received and display then in order of
+of visits each path has received and display them in order of
 number of visits (descending order by default).
 
 ## Install
