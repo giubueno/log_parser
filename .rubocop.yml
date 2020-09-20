@@ -7,6 +7,7 @@ require: rubocop-rspec
 #   * https://github.com/bbatsov/ruby-style-guide
 #   * https://rubocop.readthedocs.io/
 AllCops:
+  NewCops: enable
   DisplayCopNames: true
   DisplayStyleGuide: true
   ExtraDetails: false
