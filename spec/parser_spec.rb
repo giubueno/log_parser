@@ -80,7 +80,7 @@ describe Parser do
 
     describe '.totals' do
       subject { counter.totals.map(&:first) }
-      
+
       let(:line1) { '/home 722.247.931.582' }
       let(:line2) { '/home/index 722.247.931.582' }
       let(:line3) { '/home/index 722.247.931.583' }
