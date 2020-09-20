@@ -8,7 +8,7 @@ number of visits (descending order by default).
 This project was implemented using MVP (Model View Presenter) to separate the different
 concerns involved in parsing log information.
 
-[design diagram](assets/design.png)
+![design diagram](assets/design.png)
 
 ## Install
 
