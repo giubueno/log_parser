@@ -11,3 +11,4 @@ group :test do
 end
 
 gem 'activesupport', '~> 6.0', require: 'active_support'
+gem 'rake', '~> 13.0', require: false
