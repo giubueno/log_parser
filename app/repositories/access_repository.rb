@@ -13,7 +13,6 @@ module Repositories
 
     # Registers a new access and update the path counter.
     def register(access)
-      ip_exists?(access.ip)     ? update_ip(access)   : add_ip(access)
       path_exists?(access.path) ? update_path(access) : add_path(access)
     end
 
@@ -24,22 +23,6 @@ module Repositories
     private
 
     attr_accessor :paths, :ips
-
-    def ip_exists?(ip)
-      !ips[ip].nil?
-    end
-
-    def add_ip(access)
-      register = Models::Ip.new(access.ip, 1)
-      register.paths[access.path] = 1
-      ips[access.ip] = register
-    end
-
-    def update_ip(access)
-      register = ips[access.ip]
-      register.paths[access.path] += 1
-      register
-    end
 
     def path_exists?(path)
       !paths[path].nil?
