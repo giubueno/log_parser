@@ -1,12 +1,5 @@
 # frozen_string_literal: true
 
-require 'rspec'
-require_relative '../../../app/services/parsers/file_parser'
-require_relative '../../../app/services/parsers/line_parser'
-require_relative '../../../app/repositories/access_repository'
-require_relative '../../../app/models/access'
-require_relative '../../../app/exceptions/parser_exception'
-
 # rubocop:disable Metrics/BlockLength
 describe Services::Parsers::FileParser do
   subject(:parser) { described_class.new(filename, repository, line_parser) }

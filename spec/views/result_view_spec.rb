@@ -1,10 +1,5 @@
 # frozen_string_literal: true
 
-require 'rspec'
-require_relative '../../app/utils/canvas'
-require_relative '../../app/views/result_view'
-require_relative '../../app/models/path'
-
 describe Views::ResultView do
   describe '.render' do
     let(:accesses) { [Models::Path.new('/home', 3, 1), Models::Path.new('/about', 2, 2)] }

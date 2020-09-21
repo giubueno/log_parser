@@ -1,8 +1,5 @@
 # frozen_string_literal: true
 
-require 'rspec'
-require_relative '../../../app/services/parsers/line_parser'
-
 describe Services::Parsers::LineParser do
   subject(:parser) { described_class.new }
 

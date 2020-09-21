@@ -1,14 +1,5 @@
 # frozen_string_literal: true
 
-require 'rspec'
-require_relative '../../app/presenters/parser_presenter'
-require_relative '../../app/repositories/access_repository'
-require_relative '../../app/services/parsers/file_parser'
-require_relative '../../app/views/error_view'
-require_relative '../../app/views/result_view'
-require_relative '../../app/utils/canvas'
-require_relative '../../app/exceptions/parser_exception'
-
 describe Presenters::ParserPresenter do
   describe '.start' do
     subject(:presenter) { described_class.new(service, error_view, result_view) }
