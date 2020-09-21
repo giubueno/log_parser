@@ -41,5 +41,5 @@ bundle exec rake
 You can run program by calling the script directly as follow.
 
 ```bash
-./main.rb webserver.log
+./parser.rb spec/data/webserver.log
 ```
