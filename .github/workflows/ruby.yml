@@ -33,7 +33,7 @@ jobs:
       run: bundle exec rake
     - name: Upload coverage to Codecov
       env:
-        CI: true
+        CI: 'true'
       uses: codecov/codecov-action@v1
       with:
         token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
