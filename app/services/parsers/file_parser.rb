@@ -1,9 +1,31 @@
 # frozen_string_literal: true
 
+require_relative '../../exceptions/parser_exception'
+
 module Services
   module Parsers
-    # Parse a log file.
+    # Log file parser.
     class FileParser
+      def initialize(filepath, repository, line_parser)
+        @filepath = filepath
+        @repository = repository
+        @line_parser = line_parser
+      end
+
+      def parse
+        raise Parser::ParserException, "File #{filepath} does not exist." unless File.exist?(filepath)
+
+        File.foreach(filepath) do |line|
+          access = line_parser.parse(line)
+          repository.register(access)
+        end
+
+        repository.accesses
+      end
+
+      private
+
+      attr_accessor :filepath, :repository, :line_parser
     end
   end
 end
