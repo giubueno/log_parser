@@ -1,9 +1,5 @@
 # frozen_string_literal: true
 
-require 'rspec'
-require_relative '../../app/repositories/access_repository'
-require_relative '../../app/models/access'
-
 describe Repositories::AccessRepository do
   let(:repository) { described_class.new }
 
