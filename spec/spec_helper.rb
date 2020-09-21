@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'rspec'
+require 'helper'
 
 Dir["#{Dir.pwd}/app/**/*.rb"].sort.each { |file| require file }
 
