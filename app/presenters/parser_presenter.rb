@@ -14,7 +14,7 @@ module Presenters
     def start
       totals = parser_service.parse
       result_view.render(totals)
-    rescue Parser::ParserException => e
+    rescue StandardError => e
       error_view.render(e)
     end
 
