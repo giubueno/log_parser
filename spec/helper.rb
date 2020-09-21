@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 require 'simplecov'
-SimpleCov.start
+SimpleCov.start do
+  track_files "/app/**/*.rb"
+end
 
 if ENV['CI'] == 'true'
   require 'codecov'
