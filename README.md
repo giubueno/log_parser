@@ -33,7 +33,7 @@ You can run this code using my [Repl.it](https://repl.it/join/edaixuzi-giubueno)
 You can execute the tests by typing the following line.
 
 ```bash
-bundle exec rspec spec --format documentation
+bundle exec rake
 ```
 
 ### The program
