@@ -9,6 +9,7 @@ group :test do
   gem 'rspec',         '~> 3.9'
   gem 'rubocop',       '~> 0.91.0', require: false
   gem 'rubocop-rspec', '~> 1.43',   require: false
+  gem 'simplecov',     '~> 0.19.0', require: false
 end
 
 gem 'activesupport', '~> 6.0', require: 'active_support'
