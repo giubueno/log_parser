@@ -12,7 +12,7 @@ concerns involved in parsing log information.
 
 ## Install
 
-This program is written in Ruby. In order to execute this program you will need to install the following gems (libraries in Ruby).
+This program is written in Ruby. To execute this program, you will need to install the following gems (libraries in Ruby).
 - Bundler
 - Active Support
 - Rspec
@@ -36,7 +36,7 @@ bundle exec rake
 
 ### The program
 
-You can run program by calling the script directly as follow.
+You can run the program by calling the script directly as follow.
 
 ```bash
 ./parser.rb spec/data/webserver.log
