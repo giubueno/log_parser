@@ -13,7 +13,8 @@ module Services
       end
 
       def parse
-        raise Parser::ParserException, "File #{filepath} does not exist." unless File.exist?(filepath)
+        raise Parser::ParserException, "#{filepath} does not exist." unless File.exist?(filepath)
+        raise Parser::ParserException, "#{filepath} is not a file." unless File.file?(filepath)
 
         File.foreach(filepath) do |line|
           access = line_parser.parse(line)
