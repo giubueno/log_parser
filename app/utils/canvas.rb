@@ -3,11 +3,11 @@
 module Utils
   # Abstract the terminal to improve testability.
   class Canvas
-    def puts(content)
+    def print_line(content)
       puts content
     end
 
-    def print(content)
+    def print_same_line(content)
       print content
     end
   end

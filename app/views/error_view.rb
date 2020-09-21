@@ -6,8 +6,8 @@ module Views
   # View responsible for rendering an error.
   class ErrorView < BaseView
     def render(error)
-      canvas.puts 'The following error has occurred.'
-      canvas.puts error
+      canvas.print_line 'The following error has occurred.'
+      canvas.print_line error
     end
   end
 end

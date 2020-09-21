@@ -7,25 +7,19 @@ require_relative '../../app/models/path'
 
 describe Views::ResultView do
   describe '.render' do
-    let(:accesses) { [Models::Path.new('/home', 1, 1), Models::Path.new('/about', 2, 1)] }
-    let(:header) { 'List of webpages with most page views ordered from most pages views to less page views:' }
+    let(:accesses) { [Models::Path.new('/home', 3, 1), Models::Path.new('/about', 2, 2)] }
     let(:about_message) { '/about 2 visits ' }
     let(:home_message) { '/home 1 visits ' }
-    let(:canvas) { instance_double(Utils::Canvas.name, puts: header, print: about_message) }
+    let(:canvas) { instance_double(Utils::Canvas.name, print_line: about_message) }
 
-    it 'renders the top message' do
+    # rubocop:disable RSpec/MultipleExpectations
+    it 'renders right content' do
       described_class.new(canvas).render(accesses)
-      expect(canvas).to have_received(:puts).with(header)
+      expect(canvas).to have_received(:print_line).with('/home 3 visits')
+      expect(canvas).to have_received(:print_line).with('/about 2 visits')
+      expect(canvas).to have_received(:print_line).with('/about 2 unique views')
+      expect(canvas).to have_received(:print_line).with('/home 1 unique views')
     end
-
-    it 'renders the /about total visits' do
-      described_class.new(canvas).render(accesses)
-      expect(canvas).to have_received(:print).with(about_message)
-    end
-
-    it 'renders the /home total visits' do
-      described_class.new(canvas).render(accesses)
-      expect(canvas).to have_received(:print).with(home_message)
-    end
+    # rubocop:enable RSpec/MultipleExpectations
   end
 end
