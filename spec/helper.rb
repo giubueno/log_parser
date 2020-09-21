@@ -1,12 +1,8 @@
 # frozen_string_literal: true
 
 require 'simplecov'
-
-if ENV['CI'] == 'true'
-  require 'codecov'
-  SimpleCov.formatter = SimpleCov::Formatter::Codecov
-end
-
+require 'codecov'
+SimpleCov.formatter = SimpleCov::Formatter::Codecov
 SimpleCov.start do
-  track_files '/app/**/*.rb'
+  add_filter '/spec/'
 end
