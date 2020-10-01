@@ -29,23 +29,23 @@ module Repositories
     end
 
     def add_path(access)
-      register = Models::Path.new(access.path, 1, 1)
-      register.ips[access.ip] = 1
-      paths[access.path] = register
+      registry = Models::Path.new(access.path, 1, 1)
+      registry.ips[access.ip] = 1
+      paths[access.path] = registry
     end
 
     def update_path(access)
-      register = paths[access.path]
-      register.increase_total
+      registry = paths[access.path]
+      registry.increase_total
 
-      if register.ips[access.ip].nil?
-        register.ips[access.ip] = 1
-        register.increase_unique
+      if registry.ips[access.ip].nil?
+        registry.ips[access.ip] = 1
+        registry.increase_unique
       else
-        register.ips[access.ip] += 1
+        registry.ips[access.ip] += 1
       end
 
-      register
+      registry
     end
   end
 end
