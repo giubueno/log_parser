@@ -9,7 +9,7 @@ module Models
       self.path   = path
       self.total  = total
       self.unique = unique
-      @ips    = {}
+      self.ips = {}
     end
 
     def increase_total
@@ -21,7 +21,7 @@ module Models
     end
 
     def average
-      total.to_f / unique.to_f
+      total.to_f / unique
     end
 
     private

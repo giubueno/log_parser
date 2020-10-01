@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# rubocop:disable Metrics/BlockLength
 describe Repositories::AccessRepository do
   let(:repository) { described_class.new }
 
@@ -34,16 +35,18 @@ describe Repositories::AccessRepository do
     end
 
     context 'when register more than a few registries' do
-      let(:access2) { Models::Access.new('/home', '127.0.0.2') }
-
       subject(:result) do
         repository.register(access)
         repository.register(access2)
         repository.register(access2)
       end
+
+      let(:access2) { Models::Access.new('/home', '127.0.0.2') }
+
       it 'calculate the average' do
         expect(result.average).to eq(1.5)
       end
     end
   end
 end
+# rubocop:enable Metrics/BlockLength
