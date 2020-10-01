@@ -32,5 +32,18 @@ describe Repositories::AccessRepository do
         expect(result.total).to eq(2)
       end
     end
+
+    context 'when register more than a few registries' do
+      let(:access2) { Models::Access.new('/home', '127.0.0.2') }
+
+      subject(:result) do
+        repository.register(access)
+        repository.register(access2)
+        repository.register(access2)
+      end
+      it 'calculate the average' do
+        expect(result.average).to eq(1.5)
+      end
+    end
   end
 end

@@ -32,6 +32,7 @@ module Repositories
       registry = Models::Path.new(access.path, 1, 1)
       registry.ips[access.ip] = 1
       paths[access.path] = registry
+      registry
     end
 
     def update_path(access)

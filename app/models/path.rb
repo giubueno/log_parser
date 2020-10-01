@@ -6,9 +6,9 @@ module Models
     attr_reader :path, :total, :unique, :ips
 
     def initialize(path, total, unique)
-      @path   = path
-      @total  = total
-      @unique = unique
+      self.path   = path
+      self.total  = total
+      self.unique = unique
       @ips    = {}
     end
 
@@ -19,5 +19,13 @@ module Models
     def increase_unique
       @unique += 1
     end
+
+    def average
+      total.to_f / unique.to_f
+    end
+
+    private
+
+    attr_writer :path, :total, :unique, :ips
   end
 end
